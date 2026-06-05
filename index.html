@@ -1,0 +1,1158 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>S.K. Fitness Equipments — Commercial Gym Machinery Manufacturer | Bhopal</title>
+  <meta name="description"
+    content="Premium commercial gym equipment manufacturer in Bhopal, India. Heavy-duty Smith machines, cable crossovers, benches, and custom strength setups fabricated from mild steel.">
+
+  <!-- Favicon Shortcut Icon -->
+  <link rel="shortcut icon" href="assets/logo.jpg" type="image/jpeg">
+  <link rel="icon" href="assets/logo.jpg" type="image/jpeg">
+
+  <!-- Tailwind CSS Play CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['Orbitron', 'sans-serif'], /* Forged Industrial Headers */
+            sans: ['Montserrat', 'sans-serif'],
+          },
+          colors: {
+            forgedOrange: '#FF5E00',
+            forgedOrangeHover: '#FF7724',
+            obsidianDark: '#121316',
+            obsidianCard: '#16171c',
+            obsidianDarker: '#0d0e10',
+            studioGray: {
+              100: '#F5F5F7',
+              200: '#E5E5EA',
+              300: '#D1D1D6',
+              400: '#8E8E93',
+              500: '#48484A',
+              600: '#3A3A3C',
+              700: '#2C2C2E',
+              800: '#1C1C1E',
+              900: '#0C0C0E',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-obsidianDark text-white font-sans antialiased relative">
+
+  <!-- Preloader Screen -->
+  <div class="preloader-curtain flex flex-col items-center justify-center select-none" id="preloader">
+    <div class="neu-gear-container">
+      <div class="neu-gear-spinner"></div>
+      <img src="assets/logo.jpg" alt="SK Fitness Logo" class="preloader-logo">
+    </div>
+    <div class="flex flex-col items-center gap-2 font-industrial text-xs tracking-widest text-studioGray-500">
+      <span class="text-forgedOrange font-bold text-3xl accent-glow-text" id="loaderProgress">0%</span>
+      <span class="text-[9px] uppercase tracking-[0.45em] text-white">Forging Strength Equipment</span>
+    </div>
+  </div>
+
+  <!-- Header / Navigation -->
+  <header class="fixed top-0 left-0 w-full z-50 transition-all duration-500 py-6" id="navbar">
+    <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
+      <!-- Logo & Brand Identifier -->
+      <a href="./" class="flex items-center gap-3 select-none group">
+        <img src="assets/logo.jpg" alt="S.K. Fitness"
+          class="w-10 h-10 md:w-11 md:h-11 rounded-full border border-forgedOrange/30 group-hover:border-forgedOrange transition-all duration-300">
+        <div class="flex flex-col">
+          <span class="font-serif text-sm md:text-base tracking-[0.15em] text-white leading-tight font-bold">S.K. FITNESS</span>
+          <span class="font-sans text-[8px] md:text-[9px] tracking-[0.3em] text-forgedOrange leading-none uppercase font-semibold">Equipments</span>
+        </div>
+      </a>
+
+      <!-- Desktop Links -->
+      <div class="hidden lg:flex items-center gap-8 font-serif text-[11px] tracking-[0.2em] font-medium uppercase">
+        <a href="#about" class="hover:text-forgedOrange transition-colors duration-300">Our Story</a>
+        <a href="#journey" class="hover:text-forgedOrange transition-colors duration-300">Production</a>
+        <a href="#/products" class="hover:text-forgedOrange transition-colors duration-300">Products</a>
+        <a href="#video-showcase" class="hover:text-forgedOrange transition-colors duration-300">Showcase</a>
+        <a href="#reviews" class="hover:text-forgedOrange transition-colors duration-300">Testimonials</a>
+        <a href="#feeds" class="hover:text-forgedOrange transition-colors duration-300">Socials</a>
+        <a href="#contact" class="hover:text-forgedOrange transition-colors duration-300">Locate Us</a>
+      </div>
+
+      <!-- Action Button -->
+      <div class="flex items-center gap-4">
+        <a href="tel:+919082652405"
+          class="inline-flex px-4 py-2 rounded-full font-serif text-[9px] sm:text-[11px] uppercase tracking-wider font-semibold transition-all duration-300 neu-btn border border-white/5 hover:border-forgedOrange">
+          Call Factory
+        </a>
+
+        <!-- Mobile Menu Toggle -->
+        <button class="lg:hidden text-white hover:text-forgedOrange focus:outline-none" id="menuToggle">
+          <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+            <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Drawer Backdrop Overlay -->
+  <div id="drawerBackdrop"
+    class="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 opacity-0 pointer-events-none transition-opacity duration-500">
+  </div>
+
+  <!-- Mobile Drawer -->
+  <div
+    class="fixed inset-y-0 right-0 w-80 bg-obsidianDark z-50 transform translate-x-full transition-transform duration-500 shadow-2xl flex flex-col justify-between p-8"
+    id="mobileDrawer">
+    <div>
+      <div class="flex items-center justify-between mb-12">
+        <span class="font-serif text-sm tracking-[0.2em] text-forgedOrange font-bold">MENU</span>
+        <button class="text-white hover:text-forgedOrange" id="menuClose">
+          <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+            <path
+              d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+          </svg>
+        </button>
+      </div>
+
+      <nav class="flex flex-col gap-6 font-serif text-sm tracking-[0.2em] uppercase">
+        <a href="#about" class="drawer-link hover:text-forgedOrange transition-colors">Our Story</a>
+        <a href="#journey" class="drawer-link hover:text-forgedOrange transition-colors">Production</a>
+        <a href="#/products" class="drawer-link hover:text-forgedOrange transition-colors">Products</a>
+        <a href="#video-showcase" class="drawer-link hover:text-forgedOrange transition-colors">Showcase</a>
+        <a href="#reviews" class="drawer-link hover:text-forgedOrange transition-colors">Testimonials</a>
+        <a href="#feeds" class="drawer-link hover:text-forgedOrange transition-colors">Socials</a>
+        <a href="#contact" class="drawer-link hover:text-forgedOrange transition-colors">Locate Us</a>
+      </nav>
+    </div>
+
+    <div class="border-t border-white/5 pt-6 text-studioGray-400 font-sans text-xs flex flex-col gap-3">
+      <p class="font-serif text-forgedOrange tracking-[0.15em] text-xs font-bold">S.K. FITNESS BHOPAL</p>
+      <p>44, A/1, Sector H, Govindpura Industrial Area, Bhopal, MP 462023</p>
+      <div class="flex gap-4 mt-1">
+        <a href="https://www.instagram.com/sk_gym_equipment/" target="_blank"
+          class="text-studioGray-400 hover:text-forgedOrange transition-colors">
+          <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+            <path
+              d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+          </svg>
+        </a>
+        <a href="https://www.youtube.com/@Skgymequipment/featured" target="_blank"
+          class="text-studioGray-400 hover:text-forgedOrange transition-colors">
+          <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+            <path
+              d="M23.498 6.163a3.003 3.003 0 00-2.11-2.11C19.517 3.545 12 3.545 12 3.545s-7.517 0-9.388.508a3.003 3.003 0 00-2.11 2.11C0 8.033 0 12 0 12s0 3.967.502 5.837a3.003 3.003 0 002.11 2.11c1.871.508 9.388.508 9.388.508s7.517 0 9.388-.508a3.003 3.003 0 002.11-2.11c.502-1.87.502-5.837.502-5.837s0-3.967-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <main id="home-view" class="view-section">
+  <!-- Hero Section -->
+  <section class="relative min-h-screen flex items-center justify-center pt-24 overflow-hidden" id="hero">
+    <!-- WebGL Ambient Background Layer (Underlay) -->
+    <div class="absolute inset-0 z-0 bg-radial-gradient from-forgedOrange/5 to-transparent pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10 w-full py-12">
+      <!-- Left Column: Branding Copy -->
+      <div class="lg:col-span-7 flex flex-col gap-6 text-center lg:text-left">
+        <div class="inline-flex self-center lg:self-start items-center gap-2 px-4 py-1.5 rounded-full border border-forgedOrange/20 bg-forgedOrange/5 text-forgedOrange font-serif text-[10px] uppercase tracking-widest font-semibold shadow-inner">
+          <span class="w-1.5 h-1.5 rounded-full bg-forgedOrange animate-pulse"></span>
+          Industrial Strength Manufacturing
+        </div>
+
+        <h1 class="font-serif text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-wide leading-tight text-white uppercase">
+          HEAVY DUTY<br>
+          <span class="hero-orange-pulse text-forgedOrange accent-glow-text">GYM MACHINERY</span>
+        </h1>
+
+        <p class="text-studioGray-400 text-sm sm:text-base font-light leading-relaxed max-w-xl mx-auto lg:mx-0">
+          We engineer commercial-grade fitness equipment for elite health clubs and bodybuilders. Fabricated from 12-gauge mild steel (MS), precision MIG welded, and finished with high-durability electrostatic powder coating.
+        </p>
+
+        <div class="flex flex-wrap items-center justify-center lg:justify-start gap-5 mt-4">
+          <a href="#/products" class="px-8 py-3.5 rounded-full font-serif text-xs uppercase tracking-wider font-bold neu-btn neu-btn-primary">
+            Explore Machinery
+          </a>
+          <a href="#contact" class="px-8 py-3.5 rounded-full font-serif text-xs uppercase tracking-wider font-bold neu-btn border border-white/5">
+            Get Quote
+          </a>
+        </div>
+
+        <!-- Credentials Footnotes -->
+        <div class="grid grid-cols-3 gap-4 border-t border-white/5 pt-8 mt-6 max-w-md mx-auto lg:mx-0 text-left">
+          <div>
+            <h5 class="font-serif text-forgedOrange text-xl font-bold font-industrial">12 GAUGE</h5>
+            <p class="text-studioGray-500 text-[9px] uppercase tracking-wider mt-0.5">Heavy Mild Steel</p>
+          </div>
+          <div>
+            <h5 class="font-serif text-forgedOrange text-xl font-bold font-industrial">10+ YEARS</h5>
+            <p class="text-studioGray-500 text-[9px] uppercase tracking-wider mt-0.5">Industry Expertise</p>
+          </div>
+          <div>
+            <h5 class="font-serif text-forgedOrange text-xl font-bold font-industrial">BHOPAL HQ</h5>
+            <p class="text-studioGray-500 text-[9px] uppercase tracking-wider mt-0.5">Local Manufacturing</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Interactive 3D Barbell WebGL viewport -->
+      <div class="lg:col-span-5 flex items-center justify-center relative min-h-[480px]">
+        <!-- WebGL Canvas Container -->
+        <div id="heroWebGLContainer" class="w-full h-full min-h-[480px] relative z-10 flex items-center justify-center">
+          <canvas id="heroWebGLCanvas" class="w-full h-full"></canvas>
+        </div>
+        <!-- Tactile Drag Indicator -->
+        <div class="absolute bottom-2 left-1/2 -translate-x-1/2 font-serif text-[8px] tracking-[0.25em] text-studioGray-500 uppercase flex items-center gap-2 select-none pointer-events-none z-20">
+          <svg class="w-3.5 h-3.5 fill-current animate-bounce" viewBox="0 0 24 24">
+            <path d="M16 17.01V10h-2v7.01h-3L15 21l4-3.99h-3zM9 3L5 6.99h3V14h2V6.99h3L9 3z" />
+          </svg>
+          Drag to rotate barbell
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Brand Narrative & Factory Story (About) -->
+  <section class="py-24 relative border-b border-white/5" id="about">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <!-- Tactile Industrial Image Frame -->
+      <div class="relative group" id="aboutImgWrapper">
+        <div class="w-full aspect-[4/3] rounded-[32px] neu-panel p-4 overflow-hidden">
+          <div class="w-full h-full rounded-[20px] overflow-hidden relative border border-white/5 shadow-inner">
+            <img src="assets/fb_banner_image.jpg" alt="SK Fitness Gym Machinery Manufacturing"
+              class="w-full h-full object-cover filter brightness-[0.85] contrast-[1.05] transition-transform duration-1000 group-hover:scale-103">
+            <div class="absolute inset-0 bg-gradient-to-t from-obsidianDarker via-transparent to-transparent"></div>
+            <!-- Inset overlay card -->
+            <div class="absolute bottom-4 left-4 right-4 p-5 rounded-xl bg-obsidianDark/90 border border-white/5 backdrop-blur-md shadow-2xl">
+              <h4 class="font-serif text-forgedOrange text-sm font-bold uppercase tracking-wider mb-1">State-of-the-art Fabrication</h4>
+              <p class="text-studioGray-400 text-[10px] sm:text-xs font-light leading-relaxed">
+                Our workshop uses digital pipe bending machines and custom jig setups to ensure perfect biomechanical alignment of every pulley and pivot point.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Narrative Text Block -->
+      <div class="flex flex-col justify-center" id="aboutTextWrapper">
+        <span class="font-serif text-[10px] tracking-[0.4em] uppercase text-forgedOrange mb-3 block font-bold">Forged Biomechanics</span>
+        <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-wide leading-tight text-white mb-6 uppercase">
+          ENGINEERED FOR<br>
+          <span class="text-forgedOrange accent-glow-text">RAW PERFORMANCE</span>
+        </h2>
+
+        <div class="w-16 h-[3px] bg-forgedOrange mb-8 rounded"></div>
+
+        <p class="text-studioGray-400 text-sm font-light leading-relaxed mb-5">
+          At **S.K. Fitness**, we manufacture commercial fitness equipment that endures decades of high-intensity use. Established in Bhopal, we supply customized gym machine systems, including Smith machines, full crossovers, multi-adjustable benches, and free-weight plates, using structural steel profiles.
+        </p>
+
+        <p class="text-studioGray-500 text-sm font-light leading-relaxed mb-8">
+          We combine physical ergonomics with heavy-duty structural engineering. Every leverage curve and pulley offset is optimized to distribute linear weight loading exactly along natural muscle contraction curves. No shortcuts, no compromises.
+        </p>
+
+        <!-- Highlights Grid -->
+        <div class="grid grid-cols-2 gap-6 border-t border-white/5 pt-8">
+          <div class="flex flex-col">
+            <span class="font-serif text-white font-bold text-2xl font-industrial">4.7 ★</span>
+            <span class="text-studioGray-500 text-[10px] uppercase tracking-wider mt-1">Google Rating</span>
+          </div>
+          <div class="flex flex-col">
+            <span class="font-serif text-white font-bold text-2xl font-industrial">100%</span>
+            <span class="text-studioGray-500 text-[10px] uppercase tracking-wider mt-1">Mild Steel Fabrication</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Production Process Journey -->
+  <section class="py-24 bg-obsidianDarker/40 border-b border-white/5" id="journey">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="font-serif text-[10px] tracking-[0.4em] uppercase text-forgedOrange mb-3 block font-bold">Quality Standard</span>
+        <h2 class="font-serif text-3xl md:text-4xl font-extrabold tracking-wide text-white uppercase">
+          OUR PRODUCTION CYCLE
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 relative">
+        <!-- Step 1 -->
+        <div class="p-6 rounded-[24px] neu-panel flex flex-col gap-4 relative z-10" id="step1">
+          <div class="w-12 h-12 rounded-full bg-obsidianDark flex items-center justify-center box-shadow neu-inset-panel font-serif text-forgedOrange font-bold font-industrial">01</div>
+          <h3 class="font-serif text-white text-sm uppercase tracking-wider font-semibold">Ergonomic Design</h3>
+          <p class="text-studioGray-400 text-xs font-light leading-relaxed">
+            3D modeling of loading axes, pivot leverages, and pulley offsets to trace natural biomechanical curves.
+          </p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="p-6 rounded-[24px] neu-panel flex flex-col gap-4 relative z-10" id="step2">
+          <div class="w-12 h-12 rounded-full bg-obsidianDark flex items-center justify-center box-shadow neu-inset-panel font-serif text-forgedOrange font-bold font-industrial">02</div>
+          <h3 class="font-serif text-white text-sm uppercase tracking-wider font-semibold">MS Pipe Bending</h3>
+          <p class="text-studioGray-400 text-xs font-light leading-relaxed">
+            Precision bending of heavy-gauge mild steel pipes to prevent wrinkling and preserve core metal integrity.
+          </p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="p-6 rounded-[24px] neu-panel flex flex-col gap-4 relative z-10" id="step3">
+          <div class="w-12 h-12 rounded-full bg-obsidianDark flex items-center justify-center box-shadow neu-inset-panel font-serif text-forgedOrange font-bold font-industrial">03</div>
+          <h3 class="font-serif text-white text-sm uppercase tracking-wider font-semibold">MIG Welding</h3>
+          <p class="text-studioGray-400 text-xs font-light leading-relaxed">
+            Double pass carbon-dioxide shielding arc welding (MIG) for complete joint penetration and weld strength.
+          </p>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="p-6 rounded-[24px] neu-panel flex flex-col gap-4 relative z-10" id="step4">
+          <div class="w-12 h-12 rounded-full bg-obsidianDark flex items-center justify-center box-shadow neu-inset-panel font-serif text-forgedOrange font-bold font-industrial">04</div>
+          <h3 class="font-serif text-white text-sm uppercase tracking-wider font-semibold">Powder Coating</h3>
+          <p class="text-studioGray-400 text-xs font-light leading-relaxed">
+            Multistage chemical cleaning followed by electrostatic powder deposition and curing at 200°C for a scratch-proof finish.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Products Catalog -->
+  <section class="py-24 relative border-b border-white/5" id="products">
+    <div class="max-w-7xl mx-auto px-6">
+      <!-- Section Header -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
+        <div>
+          <span class="font-serif text-[10px] tracking-[0.4em] uppercase text-forgedOrange mb-3 block font-bold">Commercial Catalog</span>
+          <h2 class="font-serif text-3xl md:text-5xl font-extrabold tracking-wide text-white uppercase">
+            MACHINERY &amp; SYSTEMS
+          </h2>
+        </div>
+
+        <!-- IndiaMart Sourcing Badge -->
+        <a href="https://www.indiamart.com/skfitness-bhopal/" target="_blank"
+          class="inline-flex items-center gap-3 px-5 py-2.5 rounded-2xl bg-obsidianCard border border-white/5 box-shadow neu-panel hover:text-forgedOrange transition-all duration-300">
+          <span class="text-xs uppercase tracking-widest font-semibold font-industrial text-studioGray-300">Source on IndiaMART</span>
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H7c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.04-.42 1.99-1.07 2.25z"/>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Filter Controls (Neumorphic Tabs) -->
+      <div class="flex flex-wrap gap-4 mb-12 select-none" id="productFilterWrapper">
+        <button class="filter-tab active font-industrial text-xs uppercase tracking-widest" data-filter="all">All Equipment</button>
+        <button class="filter-tab font-industrial text-xs uppercase tracking-widest" data-filter="strength">Strength Machines</button>
+        <button class="filter-tab font-industrial text-xs uppercase tracking-widest" data-filter="bench">Benches &amp; Stands</button>
+        <button class="filter-tab font-industrial text-xs uppercase tracking-widest" data-filter="rack">Racks &amp; Free Weights</button>
+      </div>
+
+      <!-- Catalog Cards Grid (rendered dynamically by script.js) -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" id="productsCatalogGrid">
+        <!-- Products injected via renderHomepageCatalog() in script.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Specs Detail Modal -->
+  <div class="modal-overlay" id="productDetailsModal">
+    <div class="modal-content-panel p-6 sm:p-8 rounded-[32px] bg-obsidianDark border border-white/5 shadow-2xl relative max-w-2xl mx-auto flex flex-col gap-6">
+      <!-- Modal Header -->
+      <div class="flex items-start justify-between border-b border-white/5 pb-4">
+        <div>
+          <span class="font-serif text-[9px] uppercase tracking-widest text-forgedOrange font-bold" id="modalProductCategory">STRENGTH</span>
+          <h3 class="font-serif text-white text-2xl font-bold uppercase tracking-wider mt-1" id="modalProductName">Smith Machine</h3>
+        </div>
+        <button class="text-studioGray-400 hover:text-forgedOrange p-1 transition-colors" id="closeModalBtn">
+          <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+            <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Technical Specifications Sheet Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4" id="modalSpecsGrid">
+        <!-- Specs render dynamically here in script.js -->
+      </div>
+
+      <!-- Contact Supplier Call-to-Action -->
+      <div class="p-6 rounded-2xl bg-obsidianCard border border-white/5 box-shadow flex flex-col gap-4">
+        <h4 class="font-serif text-white text-xs uppercase tracking-wider font-semibold">Interested in this Machinery?</h4>
+        <p class="text-studioGray-400 text-xs font-light leading-relaxed">
+          Connect directly with our owner to discuss customization requirements (frame color, plate stack capacity, gauge thickness) for this machine.
+        </p>
+
+        <!-- Direct Connect Buttons -->
+        <div class="flex flex-col sm:flex-row gap-4 w-full mt-2">
+          <a href="tel:+919082652405" class="flex-1 py-3.5 rounded-xl font-serif text-[10px] sm:text-xs uppercase tracking-widest font-bold neu-btn border border-white/5 hover:border-forgedOrange text-center justify-center flex items-center gap-2">
+            📞 Call Factory
+          </a>
+          <a id="modalWhatsAppBtn" href="https://wa.me/919082652405?text=Hello%20S.K.%20Fitness,%20I'm%20interested%20in%20inquiring%20about%20your%20machines." target="_blank" class="flex-1 py-3.5 rounded-xl font-serif text-[10px] sm:text-xs uppercase tracking-widest font-bold neu-btn neu-btn-primary text-center justify-center flex items-center gap-2">
+            💬 WhatsApp Chat
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Video Showcase / Equipments in Action (Pinned Horizontal Scroll) -->
+  <section class="min-h-screen py-20 bg-obsidianDarker/40 relative border-b border-white/5 flex flex-col justify-center overflow-hidden" id="video-showcase">
+    <div class="w-full flex flex-col justify-center">
+      <!-- Section Title -->
+      <div class="max-w-7xl mx-auto px-6 w-full mb-12 shrink-0" id="reels-header">
+        <span class="font-serif text-[10px] tracking-[0.4em] uppercase text-forgedOrange mb-3 block font-bold">MACHINERY SHOWCASE</span>
+        <h2 class="font-serif text-3xl md:text-5xl font-extrabold tracking-wide text-white uppercase mb-6">
+          EQUIPMENTS IN ACTION
+        </h2>
+        <p class="text-studioGray-400 text-sm font-light leading-relaxed max-w-xl">
+          Scroll down to browse real videos of our machines. Hover to autoplay workouts, click to watch directly on our YouTube and Instagram.
+        </p>
+      </div>
+
+      <!-- Horizontal Scrolling Track Container -->
+      <div class="w-full overflow-hidden flex items-center relative z-10" id="reels-scroll-container">
+        <div class="flex gap-8 px-6 md:px-20 flex-nowrap w-fit items-center" id="reels-track">
+
+          <!-- Intro slide -->
+          <div class="w-[280px] md:w-[320px] shrink-0 text-left pr-4 select-none">
+            <span class="text-forgedOrange text-xs font-bold tracking-widest uppercase mb-2 block animate-pulse">
+              Scroll to Explore →
+            </span>
+            <h3 class="font-serif text-2xl md:text-3xl font-bold text-white mb-4 leading-tight">
+              Biomechanical Movement
+            </h3>
+            <p class="text-studioGray-400 text-xs md:text-sm font-light leading-relaxed">
+              Witness how our custom rollers and guided shafts optimize lifting dynamics.
+            </p>
+          </div>
+          <!-- Famous Reel 1: Leg Press -->
+          <a href="https://www.instagram.com/reel/DQr7HBEkt9p/" target="_blank"
+            class="video-card-link group relative aspect-[9/16] w-[220px] md:w-[280px] shrink-0 flex flex-col justify-end p-6 cursor-pointer">
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-85 z-20 pointer-events-none"></div>
+            <div class="relative z-30 flex flex-col gap-3">
+              <div class="play-btn-circle self-start">
+                <svg class="w-4 h-4 fill-current ml-0.5" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </div>
+              <div>
+                <span class="text-[9px] uppercase tracking-wider text-forgedOrange mb-1 block font-bold">Trending Reel</span>
+                <h4 class="font-serif text-white text-sm font-bold uppercase tracking-wider">Premium Leg Press Slider</h4>
+              </div>
+            </div>
+          </a>
+
+          <!-- Famous Reel 2: Smith Machine -->
+          <a href="https://www.instagram.com/reel/DPYTk9EkZni/" target="_blank"
+            class="video-card-link group relative aspect-[9/16] w-[220px] md:w-[280px] shrink-0 flex flex-col justify-end p-6 cursor-pointer">
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-85 z-20 pointer-events-none"></div>
+            <div class="relative z-30 flex flex-col gap-3">
+              <div class="play-btn-circle self-start">
+                <svg class="w-4 h-4 fill-current ml-0.5" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </div>
+              <div>
+                <span class="text-[9px] uppercase tracking-wider text-forgedOrange mb-1 block font-bold">Trending Reel</span>
+                <h4 class="font-serif text-white text-sm font-bold uppercase tracking-wider">Commercial Smith Fabrication</h4>
+              </div>
+            </div>
+          </a>
+
+          <!-- Famous Reel 3: Preacher Curl -->
+          <a href="https://www.instagram.com/reel/C_lLgDGtMif/" target="_blank"
+            class="video-card-link group relative aspect-[9/16] w-[220px] md:w-[280px] shrink-0 flex flex-col justify-end p-6 cursor-pointer">
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-85 z-20 pointer-events-none"></div>
+            <div class="relative z-30 flex flex-col gap-3">
+              <div class="play-btn-circle self-start">
+                <svg class="w-4 h-4 fill-current ml-0.5" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </div>
+              <div>
+                <span class="text-[9px] uppercase tracking-wider text-forgedOrange mb-1 block font-bold">Trending Reel</span>
+                <h4 class="font-serif text-white text-sm font-bold uppercase tracking-wider">Seated Preacher Arm Curl</h4>
+              </div>
+            </div>
+          </a>
+
+          <!-- Famous Reel 4: Hack Squat -->
+          <a href="https://www.instagram.com/reel/DZKgGFNo6mo/" target="_blank"
+            class="video-card-link group relative aspect-[9/16] w-[220px] md:w-[280px] shrink-0 flex flex-col justify-end p-6 cursor-pointer">
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-85 z-20 pointer-events-none"></div>
+            <div class="relative z-30 flex flex-col gap-3">
+              <div class="play-btn-circle self-start">
+                <svg class="w-4 h-4 fill-current ml-0.5" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </div>
+              <div>
+                <span class="text-[9px] uppercase tracking-wider text-forgedOrange mb-1 block font-bold">Trending Reel</span>
+                <h4 class="font-serif text-white text-sm font-bold uppercase tracking-wider">Dual Leg Squat Machine</h4>
+              </div>
+            </div>
+          </a>
+
+          <!-- Famous Reel 5: Crossover Pulley -->
+          <a href="https://www.instagram.com/reel/DPONbeukeOI/" target="_blank"
+            class="video-card-link group relative aspect-[9/16] w-[220px] md:w-[280px] shrink-0 flex flex-col justify-end p-6 cursor-pointer">
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-85 z-20 pointer-events-none"></div>
+            <div class="relative z-30 flex flex-col gap-3">
+              <div class="play-btn-circle self-start">
+                <svg class="w-4 h-4 fill-current ml-0.5" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </div>
+              <div>
+                <span class="text-[9px] uppercase tracking-wider text-forgedOrange mb-1 block font-bold">Trending Reel</span>
+                <h4 class="font-serif text-white text-sm font-bold uppercase tracking-wider">Crossover Pulley Testing</h4>
+              </div>
+            </div>
+          </a>
+
+          <!-- Famous Reel 6: Dumbbell Rack -->
+          <a href="https://www.instagram.com/reel/DRPOTg9DQ_K/" target="_blank"
+            class="video-card-link group relative aspect-[9/16] w-[220px] md:w-[280px] shrink-0 flex flex-col justify-end p-6 cursor-pointer">
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-85 z-20 pointer-events-none"></div>
+            <div class="relative z-30 flex flex-col gap-3">
+              <div class="play-btn-circle self-start">
+                <svg class="w-4 h-4 fill-current ml-0.5" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </div>
+              <div>
+                <span class="text-[9px] uppercase tracking-wider text-forgedOrange mb-1 block font-bold">Trending Reel</span>
+                <h4 class="font-serif text-white text-sm font-bold uppercase tracking-wider">Dumbbell Rack Structure</h4>
+              </div>
+            </div>
+          </a>
+
+          <!-- Famous Reel 7: Welding Joint -->
+          <a href="https://www.instagram.com/reel/DY958meIHuR/" target="_blank"
+            class="video-card-link group relative aspect-[9/16] w-[220px] md:w-[280px] shrink-0 flex flex-col justify-end p-6 cursor-pointer">
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-85 z-20 pointer-events-none"></div>
+            <div class="relative z-30 flex flex-col gap-3">
+              <div class="play-btn-circle self-start">
+                <svg class="w-4 h-4 fill-current ml-0.5" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </div>
+              <div>
+                <span class="text-[9px] uppercase tracking-wider text-forgedOrange mb-1 block font-bold">Trending Reel</span>
+                <h4 class="font-serif text-white text-sm font-bold uppercase tracking-wider">MIG Welding Pipe Joint</h4>
+              </div>
+            </div>
+          </a>
+
+          <!-- Famous Reel 8: Gym Tour -->
+          <a href="https://www.instagram.com/reel/DUaxj1pEoTG/" target="_blank"
+            class="video-card-link group relative aspect-[9/16] w-[220px] md:w-[280px] shrink-0 flex flex-col justify-end p-6 cursor-pointer">
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-85 z-20 pointer-events-none"></div>
+            <div class="relative z-30 flex flex-col gap-3">
+              <div class="play-btn-circle self-start">
+                <svg class="w-4 h-4 fill-current ml-0.5" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </div>
+              <div>
+                <span class="text-[9px] uppercase tracking-wider text-forgedOrange mb-1 block font-bold">Trending Reel</span>
+                <h4 class="font-serif text-white text-sm font-bold uppercase tracking-wider">Bhopal Commercial Gym Tour</h4>
+              </div>
+            </div>
+          </a>
+
+          <!-- Card 1: Assisted Dip Chin -->
+          <a href="https://www.youtube.com/watch?v=he4kPdkc_IA" target="_blank"
+            class="video-card-link group relative aspect-[9/16] w-[220px] md:w-[280px] shrink-0 flex flex-col justify-end p-6 cursor-pointer">
+            <img src="assets/thumb_dip_chin.jpg" alt="Assisted Dip Chin Exercise Thumbnail"
+              class="video-poster absolute inset-0 w-full h-full object-cover transition-opacity duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-85 z-20 pointer-events-none"></div>
+            
+            <div class="relative z-30 flex flex-col gap-3">
+              <div class="play-btn-circle self-start">
+                <svg class="w-4 h-4 fill-current ml-0.5" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </div>
+              <div>
+                <span class="text-[9px] uppercase tracking-wider text-forgedOrange mb-1 block font-bold">Client Video</span>
+                <h4 class="font-serif text-white text-sm font-bold uppercase tracking-wider">Dip &amp; Chin Assist</h4>
+              </div>
+            </div>
+          </a>
+
+          <!-- Card 2: Chest Press -->
+          <a href="https://www.youtube.com/watch?v=nwJkd6udi38" target="_blank"
+            class="video-card-link group relative aspect-[9/16] w-[220px] md:w-[280px] shrink-0 flex flex-col justify-end p-6 cursor-pointer">
+            <img src="assets/thumb_chest_press.jpg" alt="Chest Press Hammer Machine Thumbnail"
+              class="video-poster absolute inset-0 w-full h-full object-cover transition-opacity duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-85 z-20 pointer-events-none"></div>
+            
+            <div class="relative z-30 flex flex-col gap-3">
+              <div class="play-btn-circle self-start">
+                <svg class="w-4 h-4 fill-current ml-0.5" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </div>
+              <div>
+                <span class="text-[9px] uppercase tracking-wider text-forgedOrange mb-1 block font-bold">Client Video</span>
+                <h4 class="font-serif text-white text-sm font-bold uppercase tracking-wider">Chest Press Hammer</h4>
+              </div>
+            </div>
+          </a>
+
+          <!-- Card 3: Preacher Curl -->
+          <a href="https://www.youtube.com/watch?v=PH70wjzhLjM" target="_blank"
+            class="video-card-link group relative aspect-[9/16] w-[220px] md:w-[280px] shrink-0 flex flex-col justify-end p-6 cursor-pointer">
+            <img src="assets/thumb_preacher_curl.jpg" alt="Preacher Curl Machine Thumbnail"
+              class="video-poster absolute inset-0 w-full h-full object-cover transition-opacity duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-85 z-20 pointer-events-none"></div>
+            
+            <div class="relative z-30 flex flex-col gap-3">
+              <div class="play-btn-circle self-start">
+                <svg class="w-4 h-4 fill-current ml-0.5" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </div>
+              <div>
+                <span class="text-[9px] uppercase tracking-wider text-forgedOrange mb-1 block font-bold">Workshop Demo</span>
+                <h4 class="font-serif text-white text-sm font-bold uppercase tracking-wider">Preacher Curl Bicep</h4>
+              </div>
+            </div>
+          </a>
+
+          <!-- Card 4: Iron Plates -->
+          <a href="https://www.youtube.com/watch?v=3KniOmQ7_l0" target="_blank"
+            class="video-card-link group relative aspect-[9/16] w-[220px] md:w-[280px] shrink-0 flex flex-col justify-end p-6 cursor-pointer">
+            <img src="assets/thumb_iron_plates.jpg" alt="Iron Plates Casting Thumbnail"
+              class="video-poster absolute inset-0 w-full h-full object-cover transition-opacity duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-85 z-20 pointer-events-none"></div>
+            
+            <div class="relative z-30 flex flex-col gap-3">
+              <div class="play-btn-circle self-start">
+                <svg class="w-4 h-4 fill-current ml-0.5" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </div>
+              <div>
+                <span class="text-[9px] uppercase tracking-wider text-forgedOrange mb-1 block font-bold">Workshop Demo</span>
+                <h4 class="font-serif text-white text-sm font-bold uppercase tracking-wider">Iron Plates Casting</h4>
+              </div>
+            </div>
+          </a>
+
+          <!-- Card 5: Full Gym Setup -->
+          <a href="https://www.youtube.com/watch?v=vExQN4wywRk" target="_blank"
+            class="video-card-link group relative aspect-[9/16] w-[220px] md:w-[280px] shrink-0 flex flex-col justify-end p-6 cursor-pointer">
+            <img src="assets/thumb_gym_setup.jpg" alt="Full Gym Setup Setup Thumbnail"
+              class="video-poster absolute inset-0 w-full h-full object-cover transition-opacity duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-85 z-20 pointer-events-none"></div>
+            
+            <div class="relative z-30 flex flex-col gap-3">
+              <div class="play-btn-circle self-start">
+                <svg class="w-4 h-4 fill-current ml-0.5" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </div>
+              <div>
+                <span class="text-[9px] uppercase tracking-wider text-forgedOrange mb-1 block font-bold">Client Video</span>
+                <h4 class="font-serif text-white text-sm font-bold uppercase tracking-wider">Full Gym Setup</h4>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Equipment Gallery Section -->
+  <section class="py-24 bg-obsidianDarker/20 border-b border-white/5" id="feeds">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="font-serif text-[10px] tracking-[0.4em] uppercase text-forgedOrange mb-3 block font-bold">Digital Stage</span>
+        <h2 class="font-serif text-3xl md:text-4xl font-extrabold tracking-wide text-white uppercase">
+          EQUIPMENT GALLERY
+        </h2>
+        <p class="text-studioGray-400 text-sm font-light mt-4">
+          Real images and showcase highlights from our official showroom and workshops. Follow us on
+          <a href="https://www.instagram.com/sk_gym_equipment/" target="_blank" class="text-forgedOrange hover:underline font-semibold">@sk_gym_equipment</a>
+        </p>
+      </div>
+      <!-- Infinite Auto-Scroll Marquee Gallery -->
+      <div class="gallery-marquee-wrapper" id="instagram-grid">
+        <!-- Gradient fade edges -->
+        <div class="gallery-edge-fade-left"></div>
+        <div class="gallery-edge-fade-right"></div>
+
+        <!-- Row 1: Scrolls Left -->
+        <div class="gallery-marquee-row">
+          <div class="gallery-marquee-track marquee-scroll-left">
+            <a href="https://www.instagram.com/sk_gym_equipment/" target="_blank" class="gallery-img-card">
+              <img src="assets/ig_posts/post_1.png" alt="Heavy Duty Smith Machine" loading="lazy">
+              <div class="gallery-img-overlay"><span>Smith Machine</span></div>
+            </a>
+            <a href="https://www.instagram.com/sk_gym_equipment/" target="_blank" class="gallery-img-card">
+              <img src="assets/ig_posts/post_2.png" alt="Elite Multi-Functional Trainer" loading="lazy">
+              <div class="gallery-img-overlay"><span>Elite Trainer</span></div>
+            </a>
+            <a href="https://www.instagram.com/sk_gym_equipment/" target="_blank" class="gallery-img-card">
+              <img src="assets/ig_posts/post_3.png" alt="Compact Functional Trainer" loading="lazy">
+              <div class="gallery-img-overlay"><span>Compact Trainer</span></div>
+            </a>
+            <a href="https://www.instagram.com/sk_gym_equipment/" target="_blank" class="gallery-img-card">
+              <img src="assets/ig_posts/post_4.png" alt="45-Degree Hack Squat Machine" loading="lazy">
+              <div class="gallery-img-overlay"><span>Hack Squat</span></div>
+            </a>
+            <a href="https://www.instagram.com/sk_gym_equipment/" target="_blank" class="gallery-img-card">
+              <img src="assets/ig_posts/post_5.png" alt="Pec Deck / Rear Delt Machine" loading="lazy">
+              <div class="gallery-img-overlay"><span>Pec Deck</span></div>
+            </a>
+            <a href="https://www.instagram.com/sk_gym_equipment/" target="_blank" class="gallery-img-card">
+              <img src="assets/ig_posts/post_6.png" alt="Seated Leg Curl Machine" loading="lazy">
+              <div class="gallery-img-overlay"><span>Leg Curl</span></div>
+            </a>
+            <a href="https://www.instagram.com/sk_gym_equipment/" target="_blank" class="gallery-img-card">
+              <img src="assets/ig_posts/post_7.png" alt="Abdominal Crunch Machine" loading="lazy">
+              <div class="gallery-img-overlay"><span>Ab Crunch</span></div>
+            </a>
+            <a href="https://www.instagram.com/sk_gym_equipment/" target="_blank" class="gallery-img-card">
+              <img src="assets/ig_posts/post_8.png" alt="Inclined T-Bar Row Machine" loading="lazy">
+              <div class="gallery-img-overlay"><span>T-Bar Row</span></div>
+            </a>
+            <!-- Duplicate for seamless loop -->
+            <a href="https://www.instagram.com/sk_gym_equipment/" target="_blank" class="gallery-img-card">
+              <img src="assets/ig_posts/post_1.png" alt="Heavy Duty Smith Machine" loading="lazy">
+              <div class="gallery-img-overlay"><span>Smith Machine</span></div>
+            </a>
+            <a href="https://www.instagram.com/sk_gym_equipment/" target="_blank" class="gallery-img-card">
+              <img src="assets/ig_posts/post_2.png" alt="Elite Multi-Functional Trainer" loading="lazy">
+              <div class="gallery-img-overlay"><span>Elite Trainer</span></div>
+            </a>
+            <a href="https://www.instagram.com/sk_gym_equipment/" target="_blank" class="gallery-img-card">
+              <img src="assets/ig_posts/post_3.png" alt="Compact Functional Trainer" loading="lazy">
+              <div class="gallery-img-overlay"><span>Compact Trainer</span></div>
+            </a>
+            <a href="https://www.instagram.com/sk_gym_equipment/" target="_blank" class="gallery-img-card">
+              <img src="assets/ig_posts/post_4.png" alt="45-Degree Hack Squat Machine" loading="lazy">
+              <div class="gallery-img-overlay"><span>Hack Squat</span></div>
+            </a>
+            <a href="https://www.instagram.com/sk_gym_equipment/" target="_blank" class="gallery-img-card">
+              <img src="assets/ig_posts/post_5.png" alt="Pec Deck / Rear Delt Machine" loading="lazy">
+              <div class="gallery-img-overlay"><span>Pec Deck</span></div>
+            </a>
+            <a href="https://www.instagram.com/sk_gym_equipment/" target="_blank" class="gallery-img-card">
+              <img src="assets/ig_posts/post_6.png" alt="Seated Leg Curl Machine" loading="lazy">
+              <div class="gallery-img-overlay"><span>Leg Curl</span></div>
+            </a>
+            <a href="https://www.instagram.com/sk_gym_equipment/" target="_blank" class="gallery-img-card">
+              <img src="assets/ig_posts/post_7.png" alt="Abdominal Crunch Machine" loading="lazy">
+              <div class="gallery-img-overlay"><span>Ab Crunch</span></div>
+            </a>
+            <a href="https://www.instagram.com/sk_gym_equipment/" target="_blank" class="gallery-img-card">
+              <img src="assets/ig_posts/post_8.png" alt="Inclined T-Bar Row Machine" loading="lazy">
+              <div class="gallery-img-overlay"><span>T-Bar Row</span></div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Row 2: Scrolls Right (reverse) -->
+        <div class="gallery-marquee-row">
+          <div class="gallery-marquee-track marquee-scroll-right">
+            <a href="https://www.instagram.com/sk_gym_equipment/" target="_blank" class="gallery-img-card">
+              <img src="assets/ig_posts/post_8.png" alt="Inclined T-Bar Row Machine" loading="lazy">
+              <div class="gallery-img-overlay"><span>T-Bar Row</span></div>
+            </a>
+            <a href="https://www.instagram.com/sk_gym_equipment/" target="_blank" class="gallery-img-card">
+              <img src="assets/ig_posts/post_7.png" alt="Abdominal Crunch Machine" loading="lazy">
+              <div class="gallery-img-overlay"><span>Ab Crunch</span></div>
+            </a>
+            <a href="https://www.instagram.com/sk_gym_equipment/" target="_blank" class="gallery-img-card">
+              <img src="assets/ig_posts/post_6.png" alt="Seated Leg Curl Machine" loading="lazy">
+              <div class="gallery-img-overlay"><span>Leg Curl</span></div>
+            </a>
+            <a href="https://www.instagram.com/sk_gym_equipment/" target="_blank" class="gallery-img-card">
+              <img src="assets/ig_posts/post_5.png" alt="Pec Deck / Rear Delt Machine" loading="lazy">
+              <div class="gallery-img-overlay"><span>Pec Deck</span></div>
+            </a>
+            <a href="https://www.instagram.com/sk_gym_equipment/" target="_blank" class="gallery-img-card">
+              <img src="assets/ig_posts/post_4.png" alt="45-Degree Hack Squat Machine" loading="lazy">
+              <div class="gallery-img-overlay"><span>Hack Squat</span></div>
+            </a>
+            <a href="https://www.instagram.com/sk_gym_equipment/" target="_blank" class="gallery-img-card">
+              <img src="assets/ig_posts/post_3.png" alt="Compact Functional Trainer" loading="lazy">
+              <div class="gallery-img-overlay"><span>Compact Trainer</span></div>
+            </a>
+            <a href="https://www.instagram.com/sk_gym_equipment/" target="_blank" class="gallery-img-card">
+              <img src="assets/ig_posts/post_2.png" alt="Elite Multi-Functional Trainer" loading="lazy">
+              <div class="gallery-img-overlay"><span>Elite Trainer</span></div>
+            </a>
+            <a href="https://www.instagram.com/sk_gym_equipment/" target="_blank" class="gallery-img-card">
+              <img src="assets/ig_posts/post_1.png" alt="Heavy Duty Smith Machine" loading="lazy">
+              <div class="gallery-img-overlay"><span>Smith Machine</span></div>
+            </a>
+            <!-- Duplicate for seamless loop -->
+            <a href="https://www.instagram.com/sk_gym_equipment/" target="_blank" class="gallery-img-card">
+              <img src="assets/ig_posts/post_8.png" alt="Inclined T-Bar Row Machine" loading="lazy">
+              <div class="gallery-img-overlay"><span>T-Bar Row</span></div>
+            </a>
+            <a href="https://www.instagram.com/sk_gym_equipment/" target="_blank" class="gallery-img-card">
+              <img src="assets/ig_posts/post_7.png" alt="Abdominal Crunch Machine" loading="lazy">
+              <div class="gallery-img-overlay"><span>Ab Crunch</span></div>
+            </a>
+            <a href="https://www.instagram.com/sk_gym_equipment/" target="_blank" class="gallery-img-card">
+              <img src="assets/ig_posts/post_6.png" alt="Seated Leg Curl Machine" loading="lazy">
+              <div class="gallery-img-overlay"><span>Leg Curl</span></div>
+            </a>
+            <a href="https://www.instagram.com/sk_gym_equipment/" target="_blank" class="gallery-img-card">
+              <img src="assets/ig_posts/post_5.png" alt="Pec Deck / Rear Delt Machine" loading="lazy">
+              <div class="gallery-img-overlay"><span>Pec Deck</span></div>
+            </a>
+            <a href="https://www.instagram.com/sk_gym_equipment/" target="_blank" class="gallery-img-card">
+              <img src="assets/ig_posts/post_4.png" alt="45-Degree Hack Squat Machine" loading="lazy">
+              <div class="gallery-img-overlay"><span>Hack Squat</span></div>
+            </a>
+            <a href="https://www.instagram.com/sk_gym_equipment/" target="_blank" class="gallery-img-card">
+              <img src="assets/ig_posts/post_3.png" alt="Compact Functional Trainer" loading="lazy">
+              <div class="gallery-img-overlay"><span>Compact Trainer</span></div>
+            </a>
+            <a href="https://www.instagram.com/sk_gym_equipment/" target="_blank" class="gallery-img-card">
+              <img src="assets/ig_posts/post_2.png" alt="Elite Multi-Functional Trainer" loading="lazy">
+              <div class="gallery-img-overlay"><span>Elite Trainer</span></div>
+            </a>
+            <a href="https://www.instagram.com/sk_gym_equipment/" target="_blank" class="gallery-img-card">
+              <img src="assets/ig_posts/post_1.png" alt="Heavy Duty Smith Machine" loading="lazy">
+              <div class="gallery-img-overlay"><span>Smith Machine</span></div>
+            </a>
+          </div>
+        </div>
+      </div>
+        <!-- CTAs below gallery -->
+        <div class="flex flex-wrap items-center justify-center gap-4 mt-10">
+          <a href="https://www.instagram.com/sk_gym_equipment/" target="_blank"
+            class="inline-flex items-center gap-3 px-6 py-3 rounded-full neu-btn border border-white/5 hover:border-forgedOrange font-serif text-xs uppercase tracking-wider font-bold">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            Follow on Instagram
+          </a>
+          <a href="#/products"
+            class="inline-flex items-center gap-3 px-6 py-3 rounded-full neu-btn neu-btn-primary font-serif text-xs uppercase tracking-wider font-bold">
+            View All Products &#8594;
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Location Map & Query Submission (Contact) -->
+  <section class="py-24 relative" id="contact">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+        <!-- Contact details and Map (Left Column) -->
+        <div class="lg:col-span-5 flex flex-col gap-8">
+          <div>
+            <span class="font-serif text-[10px] tracking-[0.4em] uppercase text-forgedOrange mb-3 block font-bold">Factory HQ</span>
+            <h2 class="font-serif text-3xl sm:text-4xl font-extrabold tracking-wide text-white uppercase">
+              VISIT OUR WORKSHOP
+            </h2>
+            <p class="text-studioGray-400 text-xs font-light leading-relaxed mt-4">
+              Get in touch or navigate directly to our fabrication facility in Bhopal to browse our premium collection racks and match frame tubes.
+            </p>
+          </div>
+
+          <!-- Contact details block -->
+          <div class="flex flex-col gap-4">
+            <div class="flex items-start gap-4 p-4 rounded-2xl neu-panel bg-obsidianCard">
+              <span class="w-8 h-8 rounded-full bg-obsidianDark flex items-center justify-center text-forgedOrange text-xs font-bold box-shadow">📍</span>
+              <div class="text-xs">
+                <h4 class="font-serif text-white font-bold uppercase tracking-wider mb-1">Factory Location</h4>
+                <p class="text-studioGray-400 leading-relaxed font-light">
+                  S.K. Fitness, 44, A/1, Sector H,<br>
+                  Govindpura Industrial Area, Bhopal, Madhya Pradesh 462023
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-4 rounded-2xl neu-panel bg-obsidianCard">
+              <span class="w-8 h-8 rounded-full bg-obsidianDark flex items-center justify-center text-forgedOrange text-xs font-bold box-shadow">📞</span>
+              <div class="text-xs">
+                <h4 class="font-serif text-white font-bold uppercase tracking-wider mb-1">Direct Call</h4>
+                <p class="text-studioGray-400 font-light mb-1">Mobile: +91 9082652405</p>
+                <a href="tel:+919082652405" class="text-forgedOrange hover:underline font-semibold font-industrial">CALL OWNER S. KHAN</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Maps iframe with dark styling -->
+          <div class="w-full aspect-[4/3] rounded-3xl overflow-hidden neu-panel p-2">
+            <div class="w-full h-full rounded-[20px] overflow-hidden map-dark-filter relative border border-white/5">
+              <iframe
+                src="https://maps.google.com/maps?q=44,%20A/1,%20Sector%20H,%20Govindpura%20Industrial%20Area,%20Bhopal&t=&z=14&ie=UTF8&iwloc=&output=embed"
+                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+          </div>
+        </div>
+
+        <!-- Direct Factory Connect & Socials Hub (Right Column) -->
+        <div class="lg:col-span-7 flex flex-col h-full">
+          <div class="neu-panel p-8 flex flex-col justify-between h-full bg-obsidianCard relative min-h-[480px]">
+            <!-- Decorative corner accent (Couples Couture Style) -->
+            <div class="absolute top-0 right-0 w-16 h-16 border-t border-r border-forgedOrange/20 rounded-tr-3xl pointer-events-none"></div>
+
+            <div>
+              <span class="font-serif text-forgedOrange text-xs uppercase tracking-widest font-bold mb-3 block">Direct Sourcing</span>
+              <h4 class="font-serif text-white text-3xl font-bold mb-4 uppercase">Connect With Owner</h4>
+              <p class="text-studioGray-400 text-xs font-light leading-relaxed mb-8">
+                Skip the forms. Speak directly with our proprietor and lead engineer to discuss customized structural gauges, frame colorways, plate stack sizes, or full bundle estimates.
+              </p>
+
+              <!-- Social Connect Options -->
+              <div class="space-y-6 mb-8">
+                <!-- Direct Call / WhatsApp Row -->
+                <div class="flex items-center justify-between border-b border-white/5 pb-4">
+                  <div class="flex flex-col">
+                    <span class="text-[9px] uppercase font-bold tracking-widest text-studioGray-500 mb-0.5">Primary Contact</span>
+                    <span class="font-serif text-white text-lg font-bold tracking-wider">S. Khan (Proprietor)</span>
+                  </div>
+                  <div class="flex gap-3">
+                    <a href="tel:+919082652405"
+                      class="flex items-center justify-center w-11 h-11 bg-forgedOrange text-white rounded-full hover:bg-white hover:text-black hover:scale-105 transition-all duration-300 neu-btn"
+                      title="Call Owner">
+                      <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.27c1.12.37 2.33.57 3.57.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.27 1.11l-2.2 2.2z"/></svg>
+                    </a>
+                    <a href="https://wa.me/919082652405?text=Hello%20S.K.%20Fitness,%20I'd%20like%20to%20inquire%20about%20your%20commercial%20gym%20equipments."
+                      target="_blank"
+                      class="flex items-center justify-center w-11 h-11 bg-[#25D366] text-white rounded-full hover:bg-emerald-600 hover:scale-105 transition-all duration-300 neu-btn"
+                      title="WhatsApp Chat">
+                      <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.457L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.97-1.861-1.868-4.333-2.897-6.977-2.898-5.442 0-9.866 4.372-9.87 9.802 0 1.814.503 3.59 1.457 5.147l-1.007 3.676 3.793-.983z" />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+
+                <!-- YouTube Showcase Row -->
+                <div class="flex items-center justify-between border-b border-white/5 pb-4">
+                  <div class="flex flex-col">
+                    <span class="text-[9px] uppercase font-bold tracking-widest text-studioGray-500 mb-0.5">Fabrication Showcase</span>
+                    <span class="font-serif text-white text-lg font-bold tracking-wider">S.K. Fitness YouTube</span>
+                  </div>
+                  <div class="flex gap-3">
+                    <a href="https://www.youtube.com/@Skgymequipment/featured"
+                      target="_blank"
+                      class="flex items-center justify-center w-11 h-11 bg-[#FF0000] text-white rounded-full hover:bg-[#CC0000] hover:scale-105 transition-all duration-300 neu-btn"
+                      title="Watch Channel">
+                      <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                        <path d="M23.498 6.163a3.003 3.003 0 00-2.11-2.11C19.517 3.545 12 3.545 12 3.545s-7.517 0-9.388.508a3.003 3.003 0 00-2.11 2.11C0 8.033 0 12 0 12s0 3.967.502 5.837a3.003 3.003 0 002.11 2.11c1.871.508 9.388.508 9.388.508s7.517 0 9.388-.508a3.003 3.003 0 002.11-2.11c.502-1.87.502-5.837.502-5.837s0-3.967-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+
+                <!-- Instagram Page Row -->
+                <div class="flex items-center justify-between border-b border-white/5 pb-4">
+                  <div class="flex flex-col">
+                    <span class="text-[9px] uppercase font-bold tracking-widest text-studioGray-500 mb-0.5">Instagram Showroom</span>
+                    <span class="font-serif text-white text-lg font-bold tracking-wider">@sk_gym_equipment</span>
+                  </div>
+                  <div class="flex gap-3">
+                    <a href="https://www.instagram.com/sk_gym_equipment/"
+                      target="_blank"
+                      class="flex items-center justify-center w-11 h-11 bg-gradient-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7] text-white rounded-full hover:scale-105 transition-all duration-300 neu-btn"
+                      title="Follow Instagram">
+                      <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Hours row -->
+            <div class="border-t border-white/5 pt-4 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 text-xs text-studioGray-300">
+              <span class="flex items-center gap-2 uppercase font-bold text-[9px] tracking-widest text-forgedOrange">
+                <svg class="w-4 h-4 text-forgedOrange" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                Workshop Hours
+              </span>
+              <span class="text-white font-bold text-[10.5px] uppercase tracking-wider font-mono">Mon - Sat (10:00 AM - 08:30 PM)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  </main>
+
+  <!-- PLP View: Product Listing Directory -->
+  <main id="plp-view" class="view-section hidden min-h-screen pt-32 pb-24 px-6 max-w-7xl mx-auto">
+    <div class="flex flex-col gap-8 mb-16">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+        <div>
+          <span class="font-serif text-[10px] tracking-[0.4em] uppercase text-forgedOrange mb-3 block font-bold">Product Catalog</span>
+          <h1 class="font-serif text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-wide text-white uppercase">
+            HEAVY-DUTY EQUIPMENT DIRECTORY
+          </h1>
+        </div>
+        <!-- Search Bar -->
+        <div class="w-full md:w-80 relative">
+          <input type="text" id="plpSearchInput" placeholder="Search machinery..." class="neu-input pl-10">
+          <span class="absolute left-3.5 top-1/2 -translate-y-1/2 text-studioGray-500">🔍</span>
+        </div>
+      </div>
+
+      <!-- Categories Tabs -->
+      <div class="flex flex-wrap gap-4 select-none" id="plpFilterWrapper">
+        <button class="plp-filter-tab active font-industrial text-xs uppercase tracking-widest" data-filter="all">All Items</button>
+        <button class="plp-filter-tab font-industrial text-xs uppercase tracking-widest" data-filter="bench">Weight Benches</button>
+        <button class="plp-filter-tab font-industrial text-xs uppercase tracking-widest" data-filter="strength">Strength Machines</button>
+        <button class="plp-filter-tab font-industrial text-xs uppercase tracking-widest" data-filter="rack">Racks &amp; Stands</button>
+        <button class="plp-filter-tab font-industrial text-xs uppercase tracking-widest" data-filter="trainer">Functional Trainers</button>
+      </div>
+    </div>
+
+    <!-- Product Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" id="plpProductsGrid">
+      <!-- Generated dynamically in script.js -->
+    </div>
+  </main>
+
+  <!-- PDP View: Product Detail Page -->
+  <main id="pdp-view" class="view-section hidden min-h-screen pt-32 pb-24 px-6 max-w-7xl mx-auto">
+    <!-- Breadcrumbs & Back Button -->
+    <div class="flex items-center justify-between mb-8 select-none border-b border-white/5 pb-4">
+      <div class="flex items-center gap-2 text-xs text-studioGray-500 font-medium">
+        <a href="#/" class="hover:text-forgedOrange transition-colors">Home</a>
+        <span>&gt;</span>
+        <a href="#/products" class="hover:text-forgedOrange transition-colors">Products</a>
+        <span>&gt;</span>
+        <span class="text-white" id="pdpBreadcrumbCurrent">Adjustable Bench</span>
+      </div>
+      <a href="#/products" class="inline-flex items-center gap-2 text-xs text-studioGray-400 hover:text-forgedOrange font-bold transition-all neu-btn px-4 py-2 border border-white/5">
+        ← Back to Directory
+      </a>
+    </div>
+
+    <!-- Product Specs Presentation Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start" id="pdpProductDetailsContainer">
+      <!-- Generated dynamically in script.js -->
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-obsidianDarker border-t border-white/5 py-16 text-studioGray-400 font-sans text-sm relative z-10">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+      <!-- Column 1: Brand Info -->
+      <div class="flex flex-col gap-4">
+        <div class="flex items-center gap-2">
+          <img src="assets/logo.jpg" alt="SK Fitness Logo" class="w-8 h-8 rounded-full border border-forgedOrange/30">
+          <h3 class="font-serif text-white tracking-widest uppercase font-bold">
+            S.K. FITNESS
+          </h3>
+        </div>
+        <p class="text-xs text-studioGray-500 leading-relaxed font-light">
+          Bhopal's premier strength machinery workshop. Fabricating heavy commercial-grade fitness machines since 2012.
+        </p>
+      </div>
+
+      <!-- Column 2: Hours -->
+      <div class="flex flex-col gap-4">
+        <h4 class="font-serif text-forgedOrange text-xs uppercase tracking-wider font-semibold">Working Hours</h4>
+        <ul class="text-xs flex flex-col gap-2 font-light font-mono">
+          <li class="flex justify-between border-b border-white/5 pb-1">
+            <span>Mon - Sat</span>
+            <span>10:00 AM - 08:30 PM</span>
+          </li>
+          <li class="flex justify-between border-b border-white/5 pb-1 text-forgedOrange">
+            <span>Sunday</span>
+            <span>Closed</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Column 3: Workshop Address -->
+      <div class="flex flex-col gap-4">
+        <h4 class="font-serif text-forgedOrange text-xs uppercase tracking-wider font-semibold">The Workshop</h4>
+        <p class="text-xs leading-relaxed font-light">
+          44, A/1, Sector H, Govindpura Industrial Area,<br>
+          Bhopal, Madhya Pradesh 462023<br>
+          <span class="text-studioGray-500 font-bold block mt-1">S. Khan (Proprietor)</span>
+        </p>
+      </div>
+
+      <!-- Column 4: Links -->
+      <div class="flex flex-col gap-4">
+        <h4 class="font-serif text-forgedOrange text-xs uppercase tracking-wider font-semibold">Follow Us</h4>
+        <div class="flex gap-4">
+          <a href="https://www.instagram.com/sk_gym_equipment/" target="_blank"
+            class="p-3 bg-white/5 hover:bg-forgedOrange hover:text-black rounded-full transition-colors text-studioGray-300 duration-300 box-shadow neu-btn">
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+              <path
+                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+            </svg>
+          </a>
+          <a href="https://www.youtube.com/@Skgymequipment/featured" target="_blank"
+            class="p-3 bg-white/5 hover:bg-forgedOrange hover:text-black rounded-full transition-colors text-studioGray-300 duration-300 box-shadow neu-btn">
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+              <path
+                d="M23.498 6.163a3.003 3.003 0 00-2.11-2.11C19.517 3.545 12 3.545 12 3.545s-7.517 0-9.388.508a3.003 3.003 0 00-2.11 2.11C0 8.033 0 12 0 12s0 3.967.502 5.837a3.003 3.003 0 002.11 2.11c1.871.508 9.388.508 9.388.508s7.517 0 9.388-.508a3.003 3.003 0 002.11-2.11c.502-1.87.502-5.837.502-5.837s0-3.967-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+            </svg>
+          </a>
+        </div>
+        <p class="text-[10px] text-studioGray-500 tracking-wider">
+          © 2026 S.K. Fitness. Bhopal.
+        </p>
+      </div>
+    </div>
+
+    <!-- Sub Footer -->
+    <div
+      class="max-w-7xl mx-auto px-6 border-t border-white/5 pt-8 text-center text-studioGray-400 text-xs font-light flex flex-col sm:flex-row justify-between items-center gap-4">
+      <p class="flex items-center gap-1.5 flex-wrap justify-center sm:justify-start">
+        Designed with care for S.K. Fitness Bhopal by
+        <a href="https://seloracreatives.com/" target="_blank"
+          class="hover:text-forgedOrange text-white font-medium transition-colors inline-flex items-center gap-1.5">
+          <svg class="w-3.5 h-3.5" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M70 30C70 20 60 15 50 15C35 15 30 25 30 35C30 55 70 50 70 70C70 85 55 90 45 90C30 90 25 80 25 70" stroke="#a855f7" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="82" cy="82" r="8" fill="#a855f7"/>
+          </svg>
+          <span>SELORA</span>
+          <svg class="w-3 h-3 fill-red-500 text-red-500 inline-block animate-pulse" viewBox="0 0 24 24">
+            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+          </svg>
+        </a>
+      </p>
+      <div class="flex gap-6">
+        <a href="#about" class="hover:text-forgedOrange transition-colors">Our Story</a>
+        <a href="#/products" class="hover:text-forgedOrange transition-colors">Machinery</a>
+        <a href="#contact" class="hover:text-forgedOrange transition-colors">Locate Us</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Three.js CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <!-- GSAP Core & ScrollTrigger CDNs -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- Lucide Icons Web SDK -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+
+  <!-- Custom JavaScript -->
+  <script src="script.js"></script>
+</body>
+
+</html>

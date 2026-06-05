@@ -1,0 +1,707 @@
+/* S.K. Fitness Equipments — Dark Tactile Neumorphic Styling System */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Orbitron:wght@500;700;900&display=swap');
+
+:root {
+  --bg-dark: #121316;          /* Deep Obsidian Slate */
+  --bg-darker: #0d0e10;
+  --card-bg: #16171c;          /* Raised soft bevel panel */
+  --card-bg-light: #1c1d24;
+  --accent: #FF5E00;           /* Forged Orange */
+  --accent-glow: rgba(255, 94, 0, 0.2);
+  --accent-hover: #ff7324;
+  --text-white: #ffffff;
+  --text-muted: #8e9099;
+  --text-dim: #5c5e66;
+  
+  /* Neumorphic Shadow Matrices */
+  --neu-flat: 10px 10px 20px rgba(0, 0, 0, 0.45), 
+              -10px -10px 20px rgba(255, 255, 255, 0.03);
+  --neu-flat-hover: 12px 12px 25px rgba(0, 0, 0, 0.55), 
+                    -12px -12px 25px rgba(255, 255, 255, 0.04);
+  --neu-inset: inset 6px 6px 12px rgba(0, 0, 0, 0.5), 
+               inset -6px -6px 12px rgba(255, 255, 255, 0.02);
+  --neu-button: 6px 6px 12px rgba(0, 0, 0, 0.4), 
+                -6px -6px 12px rgba(255, 255, 255, 0.03);
+  --neu-button-active: inset 4px 4px 8px rgba(0, 0, 0, 0.5), 
+                       inset -4px -4px 8px rgba(255, 255, 255, 0.02);
+}
+
+/* Reset and Global Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--text-white);
+  overflow-x: clip;
+  max-width: 100%;
+  width: 100%;
+}
+
+html {
+  background-color: var(--bg-darker);
+  scroll-behavior: auto; /* Handled by GSAP scroll restoration */
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-darker);
+}
+::-webkit-scrollbar-thumb {
+  background: #202127;
+  border-radius: 8px;
+  border: 2px solid var(--bg-darker);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+/* Typography Helpers */
+.font-industrial {
+  font-family: 'Orbitron', sans-serif;
+}
+
+/* --- Dynamic Curtain Preloader Screen --- */
+.preloader-curtain {
+  position: fixed;
+  inset: 0;
+  background: var(--bg-darker);
+  z-index: 99999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.8s cubic-bezier(0.85, 0, 0.15, 1), opacity 0.8s ease-in-out;
+}
+
+/* Spinning Neumorphic Gear */
+.neu-gear-container {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--bg-dark);
+  box-shadow: var(--neu-flat);
+  margin-bottom: 2rem;
+}
+
+.neu-gear-spinner {
+  position: absolute;
+  inset: 15px;
+  border-radius: 50%;
+  border: 4px dashed rgba(255, 94, 0, 0.15);
+  border-top-color: var(--accent);
+  border-right-color: var(--accent);
+  animation: spin 3s linear infinite;
+}
+
+.preloader-logo {
+  position: relative;
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: var(--neu-inset);
+  border: 3px solid rgba(255, 94, 0, 0.05);
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* --- Tactile Neumorphic Elements --- */
+.neu-panel {
+  background-color: var(--card-bg);
+  box-shadow: var(--neu-flat);
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.01);
+  transition: box-shadow 0.4s ease, transform 0.4s ease, background-color 0.4s ease;
+}
+
+.neu-panel-hover:hover {
+  box-shadow: var(--neu-flat-hover);
+  transform: translateY(-4px);
+  background-color: var(--card-bg-light);
+}
+
+.neu-inset-panel {
+  background-color: var(--bg-darker);
+  box-shadow: var(--neu-inset);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.005);
+}
+
+/* Neumorphic Buttons */
+.neu-btn {
+  background-color: var(--card-bg);
+  box-shadow: var(--neu-button);
+  color: var(--text-white);
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.01);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.neu-btn:hover {
+  transform: translateY(-2px);
+  color: var(--accent);
+  box-shadow: var(--neu-flat);
+}
+
+.neu-btn:active {
+  transform: translateY(0);
+  box-shadow: var(--neu-button-active);
+}
+
+.neu-btn-primary {
+  background-color: var(--accent);
+  box-shadow: 0 4px 15px rgba(255, 94, 0, 0.35);
+  border: none;
+}
+
+.neu-btn-primary:hover {
+  background-color: var(--accent-hover);
+  box-shadow: 0 6px 20px rgba(255, 94, 0, 0.45);
+  color: var(--text-white);
+}
+
+.neu-btn-primary:active {
+  box-shadow: inset 4px 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+/* Neumorphic Input Fields */
+.neu-input {
+  background-color: var(--bg-darker);
+  box-shadow: var(--neu-inset);
+  border: none;
+  border-radius: 14px;
+  padding: 1rem 1.25rem;
+  color: var(--text-white);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  width: 100%;
+  transition: box-shadow 0.3s ease;
+}
+
+.neu-input:focus {
+  outline: none;
+  box-shadow: var(--neu-inset), 0 0 10px rgba(255, 94, 0, 0.08);
+}
+
+/* --- Header / Navigation Glass & Neumorphic Hybrid --- */
+#navbar.scrolled {
+  background-color: rgba(18, 19, 22, 0.95);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Mobile Drawer */
+#mobileDrawer {
+  background-color: var(--bg-dark) !important;
+  z-index: 100 !important;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.8) !important;
+  border-left: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+#drawerBackdrop {
+  z-index: 90 !important;
+}
+
+.overflow-hidden {
+  overflow: hidden !important;
+}
+
+/* --- Hero Section & 3D Container --- */
+#heroWebGLContainer {
+  position: relative;
+  width: 100%;
+  height: 480px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#heroWebGLCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+  cursor: grab;
+}
+
+#heroWebGLCanvas:active {
+  cursor: grabbing;
+}
+
+/* Slow sweep text color gradient for Hero Taglines */
+@keyframes orangeSweep {
+  0%, 100% { color: var(--text-white); }
+  50% { color: var(--accent); }
+}
+
+.hero-orange-pulse {
+  animation: orangeSweep 4s ease-in-out infinite;
+}
+
+/* --- Factory Journey Steps --- */
+.journey-step-connector {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  width: 100%;
+  height: 4px;
+  background: var(--bg-darker);
+  box-shadow: var(--neu-inset);
+  z-index: 1;
+}
+
+/* --- Product Filter Tags --- */
+.filter-tab, .plp-filter-tab {
+  cursor: pointer;
+  padding: 0.75rem 1.5rem;
+  border-radius: 30px;
+  background-color: var(--card-bg);
+  box-shadow: var(--neu-button);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.filter-tab.active, .plp-filter-tab.active {
+  box-shadow: var(--neu-button-active);
+  color: var(--accent);
+}
+
+/* --- Product Card & Details Modal --- */
+.product-card {
+  position: relative;
+  border-radius: 28px;
+  overflow: hidden;
+}
+
+.product-img-container {
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+  position: relative;
+  background-color: var(--bg-darker);
+}
+
+.product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Contain ensures real photo is fully visible without clipping */
+  background-color: var(--bg-darker);
+  transition: transform 0.5s ease;
+}
+
+.product-card:hover .product-image {
+  transform: scale(1.06);
+}
+
+/* Overlay Info */
+.product-overlay-tag {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  background-color: var(--bg-darker);
+  color: var(--accent);
+  box-shadow: var(--neu-inset);
+}
+
+/* Modal Overlay Styling */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+  padding: 1.5rem;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-content-panel {
+  max-width: 900px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  transform: scale(0.9);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.modal-overlay.active .modal-content-panel {
+  transform: scale(1);
+}
+
+/* Hide Modal Scrollbar */
+.modal-content-panel::-webkit-scrollbar {
+  width: 5px;
+}
+.modal-content-panel::-webkit-scrollbar-track {
+  background: transparent;
+}
+.modal-content-panel::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 5px;
+}
+
+/* --- Horizontally Pinned Video Reels --- */
+.video-card-link {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--bg-darker);
+  box-shadow: var(--neu-flat);
+  border-radius: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.01);
+  transition: box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.video-card-link:hover {
+  box-shadow: var(--neu-flat-hover);
+  border-color: rgba(255, 94, 0, 0.2);
+}
+
+.video-card-link .video-poster {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.65);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.video-card-link .video-element {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.60);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  opacity: 0;
+  z-index: 5;
+}
+
+/* Desktop Hover States */
+@media (hover: hover) {
+  .video-card-link:hover .video-poster {
+    opacity: 0;
+    transform: scale(1.04);
+  }
+  .video-card-link:hover .video-element {
+    opacity: 1;
+    transform: scale(1.04);
+  }
+}
+
+/* Playing State for touch screens */
+.video-card-link.video-playing .video-poster {
+  opacity: 0;
+  transform: scale(1.04);
+}
+.video-card-link.video-playing .video-element {
+  opacity: 1;
+  transform: scale(1.04);
+}
+
+/* Play Icon Overlay */
+.play-btn-circle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: var(--card-bg);
+  box-shadow: var(--neu-button);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  transition: all 0.3s ease;
+}
+
+.video-card-link:hover .play-btn-circle {
+  background-color: var(--accent);
+  color: var(--text-white);
+  box-shadow: 0 4px 15px rgba(255, 94, 0, 0.4);
+}
+
+/* --- Mobile Stackable Reviews ("Book Effect") --- */
+@media (max-width: 768px) {
+  #reviewsGrid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1.5rem !important;
+    padding-bottom: 2rem;
+  }
+  
+  #reviewsGrid .neu-panel {
+    position: sticky !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transform-origin: center top;
+  }
+  
+  /* Staggered sticky top offsets and z-indexes for 6 cards */
+  #reviewsGrid .neu-panel:nth-child(1) { top: 90px !important; z-index: 10; }
+  #reviewsGrid .neu-panel:nth-child(2) { top: 110px !important; z-index: 11; }
+  #reviewsGrid .neu-panel:nth-child(3) { top: 130px !important; z-index: 12; }
+  #reviewsGrid .neu-panel:nth-child(4) { top: 150px !important; z-index: 13; }
+  #reviewsGrid .neu-panel:nth-child(5) { top: 170px !important; z-index: 14; }
+  #reviewsGrid .neu-panel:nth-child(6) { top: 190px !important; z-index: 15; }
+}
+
+/* --- Custom Maps Dark Overlay --- */
+.map-dark-filter iframe {
+  filter: grayscale(1) invert(0.92) contrast(1.18) brightness(0.8);
+  transition: filter 0.5s ease;
+}
+
+.map-dark-filter:hover iframe {
+  filter: grayscale(0.5) invert(0.1) contrast(1.05) brightness(0.95);
+}
+
+/* --- Helper classes --- */
+.accent-glow-text {
+  text-shadow: 0 0 12px rgba(255, 94, 0, 0.4);
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* --- Simulated Instagram Feed Cards --- */
+.instagram-feed-card {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 24px;
+  background-color: var(--card-bg);
+}
+
+.instagram-feed-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--neu-flat-hover);
+}
+
+.instagram-video-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 9/16;
+  background-color: #000;
+  overflow: hidden;
+}
+
+.instagram-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+  pointer-events: none;
+}
+
+.instagram-feed-card:hover .instagram-video {
+  transform: scale(1.03);
+}
+
+.instagram-feed-card .play-btn-circle {
+  transition: all 0.3s ease;
+  transform: scale(0.9);
+}
+
+.instagram-feed-card:hover .play-btn-circle {
+  transform: scale(1);
+  background-color: var(--accent);
+  color: var(--text-white);
+  box-shadow: 0 4px 15px rgba(255, 94, 0, 0.4);
+}
+
+/* --- Equipment Gallery / Instagram Marquee Carousel Styles --- */
+.gallery-marquee-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 1.5rem 0;
+  background: transparent;
+}
+
+.gallery-marquee-row {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.gallery-marquee-row:last-child {
+  margin-bottom: 0;
+}
+
+.gallery-marquee-track {
+  display: flex;
+  width: max-content;
+  gap: 1.5rem;
+  will-change: transform;
+}
+
+/* Row 1 animation: Scrolls Left */
+.marquee-scroll-left {
+  animation: scrollLeft 45s linear infinite;
+}
+
+/* Row 2 animation: Scrolls Right */
+.marquee-scroll-right {
+  animation: scrollRight 45s linear infinite;
+}
+
+/* Pause animation on hover */
+.gallery-marquee-row:hover .gallery-marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scrollRight {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Premium Image Cards */
+.gallery-img-card {
+  display: block;
+  position: relative;
+  width: 260px;
+  height: 260px;
+  border-radius: 20px;
+  overflow: hidden;
+  background-color: var(--card-bg);
+  box-shadow: var(--neu-button);
+  border: 1px solid rgba(255, 255, 255, 0.02);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.gallery-img-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gallery-img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.2) 60%, transparent 100%);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 10;
+}
+
+.gallery-img-overlay span {
+  color: var(--text-white);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-align: center;
+  transform: translateY(10px);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Hover States */
+.gallery-img-card:hover {
+  transform: scale(1.04);
+  box-shadow: var(--neu-flat-hover);
+  border-color: rgba(255, 94, 0, 0.3);
+  z-index: 20;
+}
+
+.gallery-img-card:hover img {
+  transform: scale(1.06);
+}
+
+.gallery-img-card:hover .gallery-img-overlay {
+  opacity: 1;
+}
+
+.gallery-img-card:hover .gallery-img-overlay span {
+  transform: translateY(0);
+}
+
+/* Edge Fade Gradients */
+.gallery-edge-fade-left, .gallery-edge-fade-right {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 150px;
+  z-index: 30;
+  pointer-events: none;
+}
+
+.gallery-edge-fade-left {
+  left: 0;
+  background: linear-gradient(to right, var(--bg-dark) 0%, transparent 100%);
+}
+
+.gallery-edge-fade-right {
+  right: 0;
+  background: linear-gradient(to left, var(--bg-dark) 0%, transparent 100%);
+}
