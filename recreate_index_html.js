@@ -411,7 +411,7 @@ const part1 = `<!DOCTYPE html>
   </div>
 
   <!-- Video Showcase / Equipments in Action (Pinned Horizontal Scroll) -->
-  <section class="min-h-screen py-20 bg-obsidianDarker/40 relative border-b border-white/5 flex flex-col justify-center overflow-hidden" id="video-showcase">
+  <section class="min-h-screen py-20 bg-obsidianDark relative border-b border-white/5 flex flex-col justify-center overflow-hidden" id="video-showcase">
     <div class="w-full flex flex-col justify-center">
       <!-- Section Title -->
       <div class="max-w-7xl mx-auto px-6 w-full mb-12 shrink-0" id="reels-header">

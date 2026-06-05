@@ -2,6 +2,11 @@
  * S.K. Fitness Equipments — Interactive WebGL & GSAP Animation Suite
  */
 
+// Disable browser automatic scroll restoration to prevent GSAP ScrollTrigger miscalculations on page refresh
+if (history.scrollRestoration) {
+  history.scrollRestoration = 'manual';
+}
+
 // --- Local Products Database (17 Migrated IndiaMART Catalog items) ---
 const PRODUCTS_DB = [
   {
@@ -1053,6 +1058,13 @@ function setupThreeJSBarbell() {
     renderer.render(scene, camera);
   }
   animate();
+
+  // Refresh ScrollTrigger after ThreeJS canvas has settled
+  setTimeout(() => {
+    if (window.ScrollTrigger) {
+      ScrollTrigger.refresh();
+    }
+  }, 500);
 }
 
 // --- 7. GSAP Scrolling Animators & Autoplay Showreel Video Triggers ---
@@ -1180,6 +1192,13 @@ function setupScrollAnimations() {
   // Force ScrollTrigger to refresh after all images and resources load
   window.addEventListener("load", () => {
     ScrollTrigger.refresh();
+    // Additional deferred refreshes to handle late-rendering WebGL or media
+    setTimeout(() => {
+      ScrollTrigger.refresh();
+    }, 800);
+    setTimeout(() => {
+      ScrollTrigger.refresh();
+    }, 1800);
   });
 }
 
